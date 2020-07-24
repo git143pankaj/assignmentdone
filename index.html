@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+
+ span { color: white; padding: 40px 50px; margin: 5px; font-size: 40px; font-weight: bold;}
+    .col1 { background: #2b8ead; }
+    .col2 { background: #2f454e; }
+ #numberlist {height:150px; width:100%; padding: 5px; margin: 5px;  display: flex;
+  flex-wrap: wrap; margin-top: 50px;}
+.btnedit1 { margin-top: 60px; }
+.btnedit2 { margin-top: 60px; }
+
+
+
+
+[class*="col-"] {width: 100%;}
+
+
+
+
+
+
+
+/* 1201 to above */
+@media screen and (min-width: 1200px){
+  
+
+}
+
+
+/* 1025 to 1200; */
+
+/*.search-home {bottom: 20%;}
+.searhBox-home .btn {padding: 35px 14px;}*/
+
+
+
+@media screen and (max-width: 1200px){
+
+}
+
+/* 993 to 1024; */
+@media screen and (max-width: 1024px){
+
+
+
+}
+
+
+/* 768 to 992; */
+@media screen and (max-width: 992px){
+
+
+
+}
+
+
+/* 601px to 768; */
+@media screen and (max-width: 768px) {
+
+
+}
+
+
+/* 481px to 600; */
+@media screen and (max-width: 600px) {
+
+/*tab responsive*/
+
+
+    
+    }
+
+
+/* 321px to 480px; */
+  @media screen and (max-width: 480px) {
+/*tab responsive*/
+
+
+button.btn.btn-primary.btnedit1 {
+    position: absolute;
+    margin-top: -39%;
+    float: left;
+     left: 6%;
+}
+button.btn.btn-primary.btnedit2 {
+    position: absolute;
+    margin-top: -39%;
+   left: 37%;
+}
+span {
+    color: white;
+    padding: 40px 50px;
+    margin: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    width: 267px;
+
+}
+ .col1 { border: 1px solid #333; width: 420px;
+    background-color: #fff; color: #333; text-align: center; overflow: hidden;}
+.col1::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    background: #2b8ead;
+    height: 141px;
+    width: 44px;
+    margin-top: -41px;
+}
+ 
+.col2 { border: 1px solid #333; width: 420px;
+    background-color: #fff; color: #333; text-align: center; overflow: hidden;}
+.col2::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+   background: #2f454e; 
+    height: 141px;
+    width: 44px;   
+    margin-top: -41px;
+}
+
+
+}
+    
+
+/* 0px to 320; */
+@media only screen and (max-width : 320px) {   
+
+/*tab responsive*/
+
+button.btn.btn-primary.btnedit1 {
+    position: absolute;
+    margin-top: -60%;
+    float: left;
+    margin-left: 14px;
+}
+button.btn.btn-primary.btnedit2 {
+    position: absolute;
+    margin-top: -60%;
+     float: left;
+    margin-left: 60px;
+}
+span {
+    color: white;
+    padding: 40px 50px;
+    margin: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    width: 267px;
+
+}
+ .col1 { border: 1px solid #333;
+    background-color: #fff; color: #333; text-align: center; overflow: hidden;}
+.col1::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    background: #2b8ead;
+    height: 141px;
+    width: 44px;
+    margin-top: -41px;
+}
+ 
+.col2 { border: 1px solid #333;
+    background-color: #fff; color: #333; text-align: center; overflow: hidden;}
+.col2::before {
+    content: "";
+    position: absolute;
+    left: 31px;
+    background: #2f454e; 
+    height: 141px;
+    width: 44px;   
+    margin-top: -41px;
+}
+
+
+}
+
+</style>
+
+</head>
+<body>
+
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-sm-6 col-xs-12">
+      <div class="main">
+        <div id="numberlist"></div>
+        </div>     
+     
+    </div>
+      <div class="col-md-7 col-sm-6 col-xs-12">
+      <button type="button" onclick="shuffleusing(numberstring); updatenumberlist(numberstring)" class="btn btn-primary btnedit1">Shuffle Number</button>
+      <button type="button" onclick="sorting(numberstring); updatenumberlist(numberstring)" class="btn btn-primary btnedit2">Sort Number</button>
+     
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+
+  var numberstring = [1,2,3,4,5,6,7,8,9];
+
+  function updatenumberlist(arry){
+    var res="";
+    for(var i=0; i<arry.length; i++){
+      //res+="<br/>"+arry[i];
+      
+      if(arry[i-1] > arry[i]){
+      res += `<span class="col1">${arry[i]}</span>`
+        } else {
+        res += `<span class="col2">${arry[i]}</span>`
+        }
+      }
+  
+document.getElementById("numberlist").innerHTML = res;
+  }
+
+  function shuffleusing(arry){
+    var j, x, i=0; len=arry.length;
+    for(i; i<len; i++){
+      j=Math.floor(Math.random()*len);
+      x=arry[i];
+      arry[i]=arry[j];
+      arry[j]=x;
+      }
+
+      console.log(arry);      
+  }
+
+  function sorting(arry){
+    let sortarry = arry.sort();
+    console.log(sortarry);      
+  }
+
+</script>
+
+</body>
+</html>
